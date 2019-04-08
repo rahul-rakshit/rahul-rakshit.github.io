@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>setInterval/clearInterval example</title>
+
+  <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+  <script>
+    var flasher;
+    var siteIsBlackAndWhite = true;
+
+    function randomColor() {
+      let horridColors = [
+        "Aqua", "Chartreuse", "Fuchsia", "GreenYellow", "Red", "Yellow"
+      ];
+      let randomIndex = Math.floor((Math.random() * horridColors.length));
+      return horridColors[randomIndex];
+    };
+
+    function startFlashing() {
+      if (siteIsBlackAndWhite) {
+        flasher = setInterval(() => {
+          $(document.body).css("background-color", randomColor());
+          $("#heading").css({color: randomColor()});
+        }, 250);
+        siteIsBlackAndWhite = false;
+      }
+    };
+
+    function stopFlashing() {
+      clearInterval(flasher);
+      $(document.body).css("background-color", "white")
+      $("#heading").css({color: "black"});
+      siteIsBlackAndWhite = true;
+    };
+  </script>
+  <script>
+
+    $(document).ready(() => {
+      startFlashing();
+      $("#dont-stop-flashing").click(() => {
+        if (siteIsBlackAndWhite) { alert("Make what stop?!?") }
+        else { alert("No!") };
+      });
+      $("#stop-flashing").click(stopFlashing);
+      $("#start-flashing-again").click(startFlashing);
+    });
+  </script>
+</head>
+
+<body>
+  <div>
+  <div id="heading">
+    <h1>Welcome to my lurid website!</h1>
+  </div>
+
+  <button id="dont-stop-flashing">Please make it stop!!!</button>
+  <button id="stop-flashing">Really, PLEEEASE, make it stop!!!</button>
+  <button id="start-flashing-again">Start Flashing Again</button>
+</body>
+</html>
