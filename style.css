@@ -26,13 +26,13 @@
 .social-media-text {
   padding-left: 8px;
   font-family: "Oswald", sans-serif;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .body {
   display: flex;
   justify-content: center;
-  padding-top: 40px;
+  padding-top: 36px;
 }
 
 .name-container {
