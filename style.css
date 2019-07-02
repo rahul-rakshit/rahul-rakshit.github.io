@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   background-color: lightgray;
-  height: 280px;
+  height: 340px;
 }
 
 .img-and-name-container {
@@ -20,13 +20,13 @@
 
 .social-media-icon {
   position: relative;
-  top: 5px;
+  top: 10px;
 }
 
 .social-media-text {
-  padding-left: 5px;
+  padding-left: 8px;
   font-family: "Oswald", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .body {
